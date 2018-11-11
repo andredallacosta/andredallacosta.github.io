@@ -1,0 +1,82 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+/* Full-width input fields */
+input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+}
+
+.logo {
+    margin-left: 5%;
+}
+
+.slider, .slides {
+    height: 550px !important;
+    width: auto;
+}
+
+#container {
+    display: inline-block;
+    position: relative;
+  }
+  
+#container figcaption {
+    position: absolute;
+    top: 130px;
+    left: 70px;
+    font-size: 40px;
+    color: white;
+    text-shadow: 0px 0px 5px black;
+    z-index: 999;
+}
+  
+.indicators {
+    z-index: 2;
+}
+
+#experimente {
+    margin-top: 150px;
+    width: 300px;
+    margin-left: 150px;
+}
+
+.logo-imagem {
+    max-width: 80px;
+    max-height: 80px;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+
+.caption {
+    margin-top: 130px;
+    font-size: 22pt;
+    margin-left: -50px;
+}
+
+#caption1 {
+    margin-left: 23px;
+}
+
+.circle {
+    max-width: 200px;
+    max-height: 20opx;
+}

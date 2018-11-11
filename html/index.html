@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="../css/style.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link type="text/css" rel="stylesheet" href="../css/materialize.min.css"  media="screen,projection"/>
+        <link rel="icon" href="../img/logo2.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.1/firebase-firestore.js"></script>
+        <script src="../js/jquery-3.3.1.min.js"></script>
+        <title>PlayMatch</title>
+    </head>
+    <body>
+        <nav>
+            <div class="nav-wrapper cyan lighten-4">
+                <img src="../img/logo2.png" class="logo-imagem">
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                    <li><a href="#footer" class="contato waves-effect waves-light">Contato</a></li>
+                    <li><a data-target="modal1" class="modal-trigger waves-effect waves-light">Entrar</a></li>
+                    <li><a data-target="modal2" class="modal-trigger waves-effect waves-light">Registrar</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div id="container">
+            <div class="slider">
+                <ul class="slides">
+                    <li>
+                        <div class="caption left-align">Tá sem time para bater uma bola?</div>
+                        <img src="../img/ben-hershey-603997-unsplash.jpg">
+                    </li>
+                    <li>
+                        <div class="caption left-align">Correr com parceiro é mais legal!</div>
+                        <img src="../img/clem-onojeghuo-143620-unsplash.jpg">
+                    </li>
+                    <li>
+                        <div class="caption left-align">Nada se compara a pedalar a dois</div>
+                        <img src="../img/markus-spiske-544020-unsplash.jpg"> 
+                    </li>
+                    <li>
+                        <div class="caption left-align" id="caption1">Bora dividir esse peso</div>
+                        <img src="../img/victor-freitas-604838-unsplash.jpg">
+                    </li>
+                </ul>
+            </div>
+            <figcaption><button data-target="modal2" class="modal-trigger btn" id="experimente">Experimente</button></figcaption>
+        </div>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <div class="container">
+                <label for="usuario"><b>Login</b></label>
+                    <input type="text" placeholder="Digite o seu login" id="usuario" required>
+                    <label for="senha"><b>Senha</b></label>
+                    <input type="password" placeholder="Digite a sua senha" id="senha" required>    
+                    <button type="submit" class="waves-effect waves-light btn" id="login">Entrar</button>
+                    <br><br>
+                    <label>
+                        <input type="checkbox">
+                        <span>Lembrar meus dados</span>
+                    </label>
+                </div>
+            </div>
+        </div>
+        <div id="modal2" class="modal">
+            <div class="modal-content">
+                <div class="container">
+                    <h3>Registre-se agora!</h3>
+                    <input type="text" placeholder="Nome" id="nomeREG" required>
+                    <input type="email" placeholder="Email" id="emailREG" required>
+                    <input type="number" placeholder="Telefone" id="telefoneREG" required>
+                    <input type="text" placeholder="Cidade/Estado" id="cidadeREG" required>
+                    <input type="text" placeholder="Login" id="loginREG" required>
+                    <input type="password" placeholder="Digite sua senha" id="senhaREG" required>
+                    <input type="password" placeholder="Digite sua senha novamente" id="senha2REG" required>
+                    <br>
+                    <h5>Escolha quais esportes gostaria de praticar:</h5>
+                    <p>
+                        <label>
+                          <input type="checkbox" id="futebol"/>
+                          <span>Futebol</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                          <input type="checkbox" id="ciclismo"/>
+                          <span>Ciclismo</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                          <input type="checkbox" id="corrida"/>
+                          <span>Corrida/Caminhada</span>
+                        </label>
+                    </p>
+                    <p>
+                        <label>
+                          <input type="checkbox" id="academia"/>
+                          <span>Musculação/Academia</span>
+                        </label>
+                    </p> 
+                    <button type="submit" class="waves-effect waves-light btn" id="enviar">Enviar</button>  
+                </div>
+            </div>
+        </div>
+        <br><br><br><br><br><br><br><br><br>
+        <div class="row container" id="historia">
+            <div class="col s2">
+                <div class="left">
+                    <img src="../img/question.png" class="responsive-img">
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="card transparent z-depth-0">
+                    <div class="card-content black-text flow-text">
+                        <p align="justify"> conteudo Isso é um conteudoIsso é um conteudoIsso é um conteudoIsso é um conteudoIsso é um conteudoIsso é um conteudoIsso é um conteudo</p>
+                    </div>
+                </div>    
+            </div>
+
+            <div class="col s2">
+                <div class="left">
+                    <img src="../img/question.png" class="responsive-img">
+                </div>
+            </div>
+            <div class="col s4">
+                <div class="card transparent z-depth-0">
+                    <div class="card-content black-text flow-text">
+                        <p align="justify"> conteudo Isso é um conteudoIsso é um conteudoIsso é um conteudoIsso é um conteudoIsso é um conteudoIsso é um conteudoIsso é um conteudo</p>
+                    </div>                        
+                </div>
+            </div>
+        </div>
+        
+        <br><br>
+        
+        <h2 align="center">QUEM SOMOS</h2>
+        <br><br><br>
+        <div class="row">
+            <div class="col s4 center">
+                <img src="../img/team/andré.jpg" class="circle">
+                <h5>André Dalla Costa</h5>
+                <h6>Co-fundador e Desenvolvedor</h6>
+            </div>
+            <div class="col s4 center">
+                <img src="../img/team/christian.jpg" class="circle">
+                <h5>Christian Bittencort</h5>
+                <h6>Co-fundador e Financeiro</h6>
+            </div>
+            <div class="col s4 center">
+                <img src="../img/team/lindino.jpg" class="circle">
+                <h5>Matheus Lindino</h5>
+                <h6>Co-fundador e Desenvolvedor</h6>
+            </div>
+        </div>
+        <div class="row"> 
+            <div class="col s6 center">
+                <img src="../img/team/mauro.jpg" class="circle">
+                <h5>Mauro Zaragosa</h5>
+                <h6>Co-fundador e Comercial</h6>
+            </div>
+            <div class="col s6 center">
+                <img src="../img/team/rodrigo.jpg" class="circle">
+                <h5>Rodrigo Klaes</h5>
+                <h6>Co-fundador e Desenvolvedor</h6>
+            </div>
+        </div>
+        <br><br><br>
+        <footer id="footer" class="page-footer cyan lighten-3">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Nos envie uma mensagem</h5>
+                  <input placeholder="Nome completo*" type="text" class="validate">
+                  <input placeholder="Email*" type="text" class="validate">
+                  <input placeholder="Mensagem (50 caracteres max)" id="first_name" type="text" class="validate">
+                  <button class="cyan lighten-1 small btn" style="font: size 16px">Enviar <i class="fa fa-chevron-circle-right"></i></button>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Entre em contato</h5>
+                  <ul>
+                    <i class="fa fa-envelope left" style="font-size:24px"></i><p>playmatchpelotas@gmail.com</p>
+                    <a class="white-text" href="https://www.facebook.com/PlayMatchOficial"><i class="fa fa-facebook-square left" style="font-size:24px"></i><p>facebook.com/PlayMatchOficial</p></a>
+                    <a class="white-text" href="https://www.instagram.com/playmatchpelotas/"><i class="fa fa-instagram left" style="font-size:24px"></i><p>instagram.com/playmatchpelotas/</p></a>
+                </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              © 2018 PlayMatch Corp.
+
+              </div>
+            </div>
+        </footer>
+        <script src="../js/main.js"></script>
+        <script type="text/javascript" src="../js/materialize.min.js"></script>
+    </body>
+</html><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
