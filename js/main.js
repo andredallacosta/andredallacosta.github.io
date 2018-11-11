@@ -10,6 +10,7 @@ $(document).ready(function() {
   M.updateTextFields();
 });
 
+/* ANIMACAO
 var topo = 0;
 $('#historia').hide();
 $(window).scroll(function(){
@@ -21,7 +22,7 @@ $(window).scroll(function(){
         $('#historia').fadeOut(0);
         $('#container').fadeIn(700);
     }
-});
+});*/
 
 $("a.contato").click(function () {
   var elemento = $(this).attr('href');
