@@ -32,62 +32,46 @@ $("a.contato").click(function () {
 });
 
 
-var config = {
-  apiKey: "AIzaSyBBS4qUZeVe9XXMIGa_XfaXuKvwL3LYR88",
-  authDomain: "playmatch-38946.firebaseapp.com",
-  databaseURL: "https://playmatch-38946.firebaseio.com",
-  projectId: "playmatch-38946",
-  storageBucket: "playmatch-38946.appspot.com",
-  messagingSenderId: "426257277290"
-};
-firebase.initializeApp(config);
-
-let db = firebase.firestore();
-
 document.getElementById('enviar').addEventListener('click', function() {
-  if(document.getElementById('senhaREG').value === document.getElementById('senha2REG').value){
-    db.collection('Login').add({
-      Nome: document.getElementById('nomeREG').value,
-      Email: document.getElementById('emailREG').value,
-      Login: document.getElementById('loginREG').value,
-      Senha: document.getElementById('senhaREG').value,
-      Telefone: document.getElementById('telefoneREG').value,
-      Cidade: document.getElementById('cidadeREG').value,
-      Esportes: {
-        Futebol: document.getElementById('futebol').checked,
-        Ciclismo: document.getElementById('ciclismo').checked,
-        Corrida: document.getElementById('corrida').checked,
-        Academia: document.getElementById('academia').checked,
+    if(document.getElementById('senhaREG').value === document.getElementById('senha2REG').value){
+      var i = localStorage.getItem('i');
+      const usuario = {
+        nome: document.getElementById('nomeREG').value,
+        email: document.getElementById('emailREG').value,
+        login: document.getElementById('loginREG').value,
+        senha: document.getElementById('senhaREG').value,
+        telefone: document.getElementById('telefoneREG').value,
+        cidade: document.getElementById('cidadeREG').value,
+        esportes: {
+          futebol: document.getElementById('futebol').checked,
+          ciclismo: document.getElementById('ciclismo').checked,
+          corrida: document.getElementById('corrida').checked,
+          academia: document.getElementById('academia').checked
+        }
       }
-    }).then(function(docRef) {
+      if(i == null) {
+        i = 0;
+      }
+      var controle = 'usuario' + i;
+      localStorage.setItem(controle, JSON.stringify(usuario));
+      i++;
+      localStorage.setItem('i', i);
       alert('Cadastro feito com sucesso!');
-      window.location.href = "../html/login.html";
-      console.log(docRef);
-    }).catch((error) => {
-      console.log('Erro' + error);
-    });
-  } else {
-    alert('Senhas não são iguais!');
-  }
-});
-
-document.getElementById('login').addEventListener('click', function() {
-  let usuario;
-  let senha;
-  let tentativa = 0;
-  db.collection('Login').get().then((snapshot) => {
-    snapshot.forEach((doc) => {
-      usuario = doc.data().Login;
-      senha = doc.data().Senha;
-      if((usuario === document.getElementById('usuario').value) && (senha === document.getElementById('senha').value)) {
-        tentativa++;
-        window.location.href = "../html/login.html";
-      }
-    });
-    if(tentativa === 0) {
-      alert('Usuário não existente!');
+      // window.location.href = "../html/login.html";
+    } else {
+      alert('Senhas não são iguais!');
     }
   });
-});
-
-
+  
+  document.getElementById('login').addEventListener('click', function() {
+    var i = localStorage.getItem('i');
+    for(let j = 0; j < i; j++) {
+      var controle = 'usuario' + j;
+      var login = localStorage.getItem(controle);
+      login = JSON.parse(login);
+      if((login.login === document.getElementById('usuario').value) && (login.senha === document.getElementById('senha').value)) {
+        localStorage.setItem('match', controle);
+        window.location.href = "html/login.html";
+      }
+    }
+  });
