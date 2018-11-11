@@ -58,25 +58,30 @@ button {
 }
 
 .logo-imagem {
-    max-width: 80px;
-    max-height: 80px;
+    max-width: 70px;
+    max-height: 70px;
     align-items: center;
     justify-content: space-between;
     margin-left: 20px;
-    margin-top: 5px;
+    margin-top: 10px;
 }
 
 .caption {
     margin-top: 130px;
     font-size: 22pt;
     margin-left: -50px;
+    text-shadow: 2px 2px #000000;
 }
 
 #caption1 {
-    margin-left: 23px;
+    margin-left: 20px;
 }
 
 .circle {
     max-width: 200px;
     max-height: 20opx;
+}
+
+#historia {
+    font-size: 19pt;
 }
